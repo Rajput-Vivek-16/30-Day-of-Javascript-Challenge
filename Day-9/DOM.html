@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- Task 1, 2, 3 -->
+            <h1 id="changeText" class="changeBg">Vivek Rajput</h1>
+
+            <!-- Task 4 -->
+            <ul style="list-style: none;">
+                <li>List-01</li>
+            </ul>
+
+        </div>
+        
+        <!-- Task 7 -->
+        <div class="box">
+            <img src="Reference.png" alt="image" class="image">
+        </div>
+
+        <!-- Task 8 -->
+        <div class="box">
+            <p id ="cssClass" > Keep going</p>
+        </div>
+
+        <!-- Task 9, 10 -->
+        <div class="box">
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam possimus quos totam, accusantium exercitationem saepe excepturi delectus accusamus iure, officiis ipsam animi nihil officia omnis. Itaque ad odit cumque veniam.</p>
+            <button class="textBtn">Click me</button>
+        </div>
+    </div>
+
+    <script>
+        // Task 1
+        let textBox = document.getElementById("changeText");
+        textBox.textContent = "Future developer";
+
+        // Task 2
+        let bgChange = document.getElementsByClassName("changeBg")[0];
+        bgChange.style.backgroundColor = "aqua";
+
+        // Task 3
+        let div  = document.createElement("div");
+        div.textContent = "Keep it up";
+        document.querySelector('.box').appendChild(div);
+
+        // Task 4   
+        let ul = document.querySelector('ul');
+        let li = document.createElement('li');
+        li.textContent = "List-02";
+        ul.appendChild(li);
+
+        // Task 5
+        div.remove();
+        //div.style.display = "none"; 
+        
+        // Task 6
+        if (ul.lastElementChild){
+            ul.removeChild(ul.lastElementChild);
+        }
+        //li.style.display = "none";
+
+        // Task 7
+        let image = document.querySelector(".image");
+        image.setAttribute("src","image.png")
+
+        // Task 8
+        let cssClass = document.querySelector("#cssClass");
+        cssClass.classList.add("vivek");
+        cssClass.classList.remove("vivek");
+        /*cssClass.className = "vivek"
+        cssClass.className = ""*/
+
+
+        // Task 9
+        let para = document.querySelector(".para")
+        let button = document.querySelector("button")
+        button.addEventListener("click", () =>{
+            para.textContent = `Thanks, future developer!`;
+        })
+
+        // Task 10
+        let box = document.getElementsByClassName("box")[3];
+        box.addEventListener("mouseover", () =>{
+            box.style.borderColor = "green";
+        })
+        box.addEventListener("mouseout", () =>{
+            box.style.borderColor = "white";
+        })
+
+    </script>
+</body>
+</html>
